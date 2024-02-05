@@ -1,0 +1,15 @@
+<div class="wrapper">
+    <div>
+        <mat-form-field class="full-width">
+            <mat-label>Search for Cat breed</mat-label>
+            <input matInput #input (input)="mainSearch(input.value)" [value]="iunputText">
+        </mat-form-field>
+        <mat-nav-list>
+            <mat-list-item *ngFor="let breed of breeds" (click)="saveItem(breed)">
+                <p>{{ breed.name }}</p>
+            </mat-list-item>
+            <mat-progress-bar *ngIf="loader" mode="indeterminate"></mat-progress-bar>
+            <p *ngIf=" breeds.length == 0 && iunputText && !loader"><i>Nothing found</i></p>
+        </mat-nav-list>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="wrapper">
+    <mat-nav-list>
+        Saved Items
+        <div><i class="hint" *ngIf="!savedItems.length">Your saved items will appear here.</i></div>
+        <mat-list-item *ngFor="let breed of savedItems" (click)="saveItem(breed)">
+            <p>{{ breed.name }}</p>
+        </mat-list-item>
+    </mat-nav-list>
+</div>
